@@ -3,5 +3,5 @@ pipeline:
     image: node
     commands:
       - yarn install
-      - yarn  test
+      - yarn test
       
