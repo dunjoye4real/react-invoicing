@@ -6,7 +6,7 @@ export class MainMenu extends React.Component {
   render() {
     return (
       <Menu theme='dark' mode='horizontal'>
-        <Menu.Item>React Invoicing</Menu.Item>
+        <Menu.Item>React Invoicing app</Menu.Item>
       </Menu>
     )
   }
