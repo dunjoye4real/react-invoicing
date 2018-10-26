@@ -1,7 +1,23 @@
-pipeline:
-  test:
-    image: node
+kind: pipeline
+name: default
+
+steps: 
+  - name: tests
+    image: node:latest
     commands:
-      - yarn install
-      - yarn test
-      
+    - yarn install
+    - yarn test
+
+  - name: build and push to docker
+    image: plugins/docker
+    target: production
+    secrets: [ docker_username, docker_password]
+
+secrets:
+  docker_username:
+    external: 
+      name: drone-drone#docker_username
+
+  docker_password:
+    external:
+      name: drone-drone#docker_password
